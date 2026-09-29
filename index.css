@@ -440,7 +440,7 @@
 #work-render-container {
     position: relative;
     width: 350px;
-    height: 570px;
+    height: 590px;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -454,7 +454,9 @@
     padding: 2px;
     border-radius: 20px;
     width: 100%;
-    overflow: hidden
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(9, 20, 52, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .work-item-container-transition {
@@ -519,8 +521,16 @@
 
 .work-item-orange-button {
     width: 100%;
-    padding: 9px !important;
-    margin-left: 8px
+    padding: 10px !important;
+    margin-left: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(255, 146, 62, 0.32);
+    transition: all 0.25s ease;
+}
+
+.work-item-orange-button:hover {
+    box-shadow: 0 6px 20px rgba(255, 146, 62, 0.45);
+    transform: translateY(-2px);
 }
 
 .work-item-gray-button {
@@ -617,14 +627,16 @@
 
 #contact-container {
     margin-top: 40px;
-    padding: 10px;
+    padding: 18px;
     border-radius: 20px;
     background: white;
     width: 540px;
     max-width: 45%;
     height: 560px;
     max-height: 90vh;
-    box-sizing: border-box
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(9, 20, 52, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 #contact-container input,
@@ -660,11 +672,13 @@ textarea:focus {
     color: #acacac;
     border-radius: 13px;
     padding: 7px 7px 7px 15px;
-    border: 2px solid #F5F5F5
+    border: 2px solid #F5F5F5;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .input-container:focus-within {
-    border: 2px solid #c7c7c7
+    border: 2px solid #FF923E;
+    box-shadow: 0 0 0 3px rgba(255, 146, 62, 0.15);
 }
 
 .input-container label,
@@ -1171,13 +1185,13 @@ hr {
 
 .social-icon {
     cursor: pointer;
-    filter: grayscale(1) brightness(8);
-    transition: .125s ease-in
+    filter: none !important;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .social-icon:hover {
-    filter: unset;
-    transform: scale(1.05)
+    color: #FF923E !important;
+    transform: translateY(-3px) scale(1.18);
 }
 
 section {
@@ -1257,13 +1271,4 @@ section {
     src: url(/poppins-v19-latin-700.eot);
     src: local(""), url(/poppins-v19-latin-700.eot?#iefix) format("embedded-opentype"), url(/poppins-v19-latin-700.woff2) format("woff2"), url(/poppins-v19-latin-700.woff) format("woff"), url(/poppins-v19-latin-700.ttf) format("truetype"), url(/poppins-v19-latin-700.svg#Poppins) format("svg");
     font-display: swap
-}
-
-.social-icon {
-    opacity: 1 !important; /* Force icons to be visible */
-    transition: transform 0.2s ease; /* Optional: smooth transform on hover */
-}
-
-.social-icon:hover {
-    transform: scale(1.1); /* Optional: slight scale up on hover */
-}
+}

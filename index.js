@@ -37616,42 +37616,39 @@ class rM {
 const oM = [
     {
       id: 0,
-      name: "the iqic",
+      name: "The IQIC",
       description: "Delivered a professional freelance project for a quality inspection company, creating a comprehensive business website",
       image: "images/projects/theiqic.jpeg",
       tags: ["javascript", "html", "css", "freelance"],
       liveview: "https://theiqic.com/",
-      // github: "https://github.com/satvik9373/coffee-website-.git",
-      alt: "Coffee Shop Website",
+      alt: "The IQIC Business Website",
     },
     {
       id: 1,
-      name: "venchers campaign",
-      description: "a block-based photo sharing system inspired by the historic Million Dollar Homepage concept",
+      name: "Ventures Campaign",
+      description: "A block-based photo sharing system inspired by the historic Million Dollar Homepage concept",
       image: "images/projects/krushigram.png",
-      tags: ["react", "express", "multer", "googleAuth","Cloudinery"],
+      tags: ["react", "express", "multer", "googleAuth", "Cloudinary"],
       liveview: "https://venchers-campaign.vercel.app/",
-      alt: "venchers campaign",
+      alt: "Ventures Campaign",
     },
     {
       id: 2,
-      name: "vapor ui",
-      description: "UI component library featuring 20+ reusable components, text animations, background animations, loading page elements, and interactive UI element ",
+      name: "Vapor UI",
+      description: "UI component library featuring 20+ reusable components, text animations, background animations, and interactive UI elements",
       image: "images/projects/vaporui.jpeg",
-      tags: ["javascript", "react", "ui","framer"],
+      tags: ["javascript", "react", "ui", "framer"],
       liveview: "https://vapor-ui.vercel.app/",
-      // github: "https://github.com/satvik9373/yoga-class.git",
-      alt: "Fitness Institute",
+      alt: "Vapor UI Component Library",
     },
     {
       id: 3,
       name: "Quick Labs",
       description: "Quick labs is an LMS developed for teaching assistants at my university to provide lab solutions, manage materials, and support students.",
       image: "images/projects/studybuddy.jpeg",
-      tags: ["javascript", "react", "mongodb", ""],
+      tags: ["javascript", "react", "mongodb", "express"],
       liveview: "http://quicklabs.fun/",
-      // github: "https://github.com/satvik9373/Think-Beyond-Marketing",
-      alt: "Digital Marketing Agency",
+      alt: "Quick Labs LMS",
     },
     {
       id: 4,
@@ -37660,8 +37657,7 @@ const oM = [
       image: "images/projects/opentalk.jpeg",
       tags: ["react", "mongodb", "express"],
       liveview: "https://opentalk1.netlify.app/",
-      // github: "https://github.com/satvik9373/lms-websitee",
-      alt: "Affiliate Marketing and earning Website",
+      alt: "Open Talk Platform",
     },
   ],
   aM = {
@@ -37677,12 +37673,14 @@ const oM = [
       '<div class="work-item-tag" style="background: #333;">Express</div>',
     multer:
       '<div class="work-item-tag" style="background:rgb(187, 93, 93);">Multer</div>',
-      Cloudinery: '<div class="work-item-tag" style="background:rgb(73, 143, 248);">Cloudinery</div>',
-      freelance: '<div class="work-item-tag" style="background:rgb(73, 143, 248);">Freelancs</div>',
+      Cloudinery: '<div class="work-item-tag" style="background:rgb(73, 143, 248);">Cloudinary</div>',
+      Cloudinary: '<div class="work-item-tag" style="background:rgb(73, 143, 248);">Cloudinary</div>',
+      freelance: '<div class="work-item-tag" style="background: #FF923E;">Freelance</div>',
     ui: '<div class="work-item-tag" style="background: #CA49F8;">UI Design</div>',
     tailwind: '<div class="work-item-tag" style="background:rgb(234, 248, 73);">Tailwind</div>',
     game: '<div class="work-item-tag" style="background: #e86ef0;">Game</div>',
-    framer: '<div class="work-item-tag" style="background: #e86ef0;">Framer</div>',
+    framer: '<div class="work-item-tag" style="background: #0055FF;">Framer</div>',
+    "": "",
   };
 class lM {
   constructor() {
@@ -37872,23 +37870,23 @@ class lM {
 const cM = [
   {
     name: "web development",
-    width: "90%",
+    width: "92%",
   },
   {
-    name: "app devlopment",
-    width: "55%",
+    name: "app development",
+    width: "82%",
   },
   {
     name: "graphic design",
-    width: "90%",
+    width: "88%",
   },
   {
     name: "frontend",
-    width: "80%",
+    width: "95%",
   },
   {
     name: "backend",
-    width: "75%",
+    width: "80%",
   },
 ];
 class hM {
@@ -37902,21 +37900,14 @@ class hM {
   }
   renderSkills() {
     this.skills.forEach((e) => {
+      const idx = this.skills.indexOf(e);
       this.domElements.skillsRenderContainer.insertAdjacentHTML(
         "beforeend",
         `
-                <div id="about-skill-container-${this.skills.indexOf(
-                  e
-                )}" class="row about-skill-container">
-                    <span id="about-skill-span-${this.skills.indexOf(
-                      e
-                    )}" class="about-skill-span">${e.name}</span>
+                <div id="about-skill-container-${idx}" class="row about-skill-container">
+                    <span id="about-skill-span-${idx}" class="about-skill-span">${e.name}</span>
                     <div class="about-skill-bar-container">
-                        <div id="about-skill-bar-${this.skills.indexOf(
-                          e
-                        )}" class="about-skill-bar" style="width: ${
-          e.width
-        }"></div>
+                        <div id="about-skill-bar-${idx}" class="about-skill-bar" style="width: ${e.width}"></div>
                     </div>
                 </div>
             `
@@ -37955,9 +37946,9 @@ class uM extends Ai {
         color: "#091434",
       },
       {
-        class: "#landing-cta-button",
+        class: ".social-icon",
         type: "pointer",
-        color: "#091434",
+        color: "#FF923E",
       },
       {
         class: "#logo-click-container",
@@ -39281,18 +39272,31 @@ class yM {
   }
   async sendMail() {
     this.showContainer("loading");
-    const e = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: this.fields[0].input.value,
-        email: this.fields[1].input.value,
-        message: this.fields[2].input.value,
-      }),
-    });
-    this.showResult(e);
+    const nameVal = this.fields[0].input.value;
+    const emailVal = this.fields[1].input.value;
+    const msgVal = this.fields[2].input.value;
+    try {
+      const e = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: nameVal,
+          email: emailVal,
+          message: msgVal,
+        }),
+      });
+      if (e && e.ok) {
+        this.showResult(e);
+        return;
+      }
+    } catch(err) {
+      console.log("Contact API endpoint not found, falling back to direct mail:", err);
+    }
+    const mailtoUrl = `mailto:amitakhil001@gmail.com?subject=${encodeURIComponent("Portfolio Message from " + nameVal)}&body=${encodeURIComponent(msgVal + "\n\n---\nFrom: " + nameVal + " (" + emailVal + ")")}`;
+    window.open(mailtoUrl, "_blank");
+    this.showResult({ status: 200 });
   }
   hideAllContainers() {
     this.domElements.formContainer.classList.add("hide"),

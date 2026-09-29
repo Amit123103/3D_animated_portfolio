@@ -139,7 +139,9 @@ const oM = [
   
     renderTags(e) {
       let t = "";
-      for (let n = 0; n < e.length; n++) t += this.tags[e[n]];
+      for (let n = 0; n < e.length; n++) {
+        if (this.tags && this.tags[e[n]]) t += this.tags[e[n]];
+      }
       return t;
     }
   
